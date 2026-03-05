@@ -1,0 +1,82 @@
+:root {
+  color-scheme: dark;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+}
+
+html,
+body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: radial-gradient(circle at center, #1b1b1b, #070707 75%);
+}
+
+#app,
+canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+#hud {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+}
+
+#state-pill {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background: rgba(0, 0, 0, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 999px;
+  padding: 8px 12px;
+  font-size: 13px;
+}
+
+#help {
+  position: absolute;
+  left: 16px;
+  bottom: 18px;
+  background: rgba(0, 0, 0, 0.45);
+  border-radius: 8px;
+  padding: 8px 10px;
+  font-size: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+#spin-panel {
+  pointer-events: auto;
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: rgba(12, 12, 12, 0.85);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  padding: 10px;
+  width: 140px;
+}
+
+#spin-panel h3 {
+  font-size: 12px;
+  margin: 0 0 8px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+
+#spin-canvas {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  cursor: crosshair;
+  background: rgba(255, 255, 255, 0.96);
+}
+
+#spin-readout {
+  margin-top: 8px;
+  font-size: 12px;
+  text-align: center;
+  opacity: 0.95;
+}
