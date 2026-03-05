@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3D Eight-Ball Pool</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://unpkg.com/three@0.161.0/build/three.module.js",
+          "three/addons/": "https://unpkg.com/three@0.161.0/examples/jsm/",
+          "cannon-es": "https://cdn.jsdelivr.net/npm/cannon-es@0.20.0/+esm"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div id="app"></div>
+    <div id="hud">
+      <div id="state-pill">State: Aiming</div>
+      <div id="help">
+        Move mouse to aim · click+drag backward to set power · release to shoot
+      </div>
+      <div id="spin-panel">
+        <h3>Cue Ball Spin</h3>
+        <canvas id="spin-canvas" width="120" height="120" aria-label="Cue ball spin selector"></canvas>
+        <div id="spin-readout">x: 0.00 · y: 0.00</div>
+      </div>
+    </div>
+    <script type="module" src="src/main.js"></script>
+  </body>
+</html>
