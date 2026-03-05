@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3D Eight-Ball Pool</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      }
+      body {
+        margin: 0;
+        overflow: hidden;
+        background: radial-gradient(circle at center, #1f1f1f, #111);
+      }
+      #app {
+        position: fixed;
+        inset: 0;
+      }
+      #hud {
+        position: fixed;
+        top: 1rem;
+        left: 1rem;
+        display: grid;
+        gap: 0.5rem;
+        padding: 0.75rem 1rem;
+        border-radius: 10px;
+        background: rgba(0, 0, 0, 0.45);
+        backdrop-filter: blur(4px);
+        z-index: 10;
+      }
+      #state,
+      #shot-power {
+        font-size: 0.9rem;
+      }
+      #spin-panel {
+        position: fixed;
+        right: 1rem;
+        bottom: 1rem;
+        width: 160px;
+        padding: 0.65rem;
+        border-radius: 10px;
+        background: rgba(0, 0, 0, 0.45);
+        backdrop-filter: blur(4px);
+        z-index: 10;
+      }
+      #spin-canvas {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1;
+        cursor: crosshair;
+      }
+      #spin-label {
+        margin: 0.2rem 0 0;
+        font-size: 0.8rem;
+        text-align: center;
+      }
+      .help {
+        color: #ddd;
+        font-size: 0.75rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app"></div>
+    <section id="hud">
+      <div id="state">State: Aiming</div>
+      <div id="shot-power">Power: 0%</div>
+      <div class="help">Drag mouse left/right to aim. Click-drag downwards to shoot.</div>
+    </section>
+    <section id="spin-panel">
+      <canvas id="spin-canvas" width="240" height="240"></canvas>
+      <p id="spin-label">Spin: center-ball hit</p>
+    </section>
+
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://unpkg.com/three@0.165.0/build/three.module.js",
+          "three/addons/": "https://unpkg.com/three@0.165.0/examples/jsm/",
+          "cannon-es": "https://cdn.jsdelivr.net/npm/cannon-es@0.20.0/dist/cannon-es.js"
+        }
+      }
+    </script>
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>
